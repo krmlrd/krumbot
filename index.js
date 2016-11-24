@@ -6,8 +6,8 @@ const token = '288763760:AAFOQ9Vk6GIOg2N3A7QSbmIhCJC3JnUQbcQ';
 // Create a bot that uses 'polling' to fetch new updates (replaced by webhook)
 const bot = new TelegramBot(token, {
   webHook: {
-    port: 443,
-    host: '0.0.0.0',
+    port: process.env.PORT,
+    host: process.env.HOST,
   },
 });
 bot.setWebHook(`https://pure-refuge-34008.herokuapp.com/bot${token}`);
