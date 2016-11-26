@@ -1,5 +1,21 @@
 const TelegramBot = require('node-telegram-bot-api');
 
+const bc = [
+  'иди ты!',
+  'а ты, случайно, не мой родственник?',
+  'ой, йибааааааалысь дыкы гуууууси догорыыыыыы ногаааамы',
+  'под пульт откашляй',
+  'извините, но кто кого ебёть?',
+  'до встречи в четверЬг!',
+  'творческих узбеков!',
+  'ну это ещё бабка надвое сказала',
+  'чтоб у тебя хуй на пятке вырос!',
+  'что ты выёбуешься, як кит на драбыни!',
+  'у тебя рыльце-то в пушку!',
+  'залупа петра великого!',
+  'ух и дьявол)',
+  'Тоша, ты же лулка!'
+];
 // replace the value below with the Telegram token you receive from @BotFather
 const token = '288763760:AAFOQ9Vk6GIOg2N3A7QSbmIhCJC3JnUQbcQ';
 
@@ -29,7 +45,8 @@ bot.onText(/\/echo (.+)/, function (msg, match) {
 // messages.
 bot.on('message', function (msg) {
   var chatId = msg.chat.id;
+  var resp = bc[Math.floor(Math.random()*bc.length)];
 
   // send a message to the chat acknowledging receipt of their message
-  bot.sendMessage(chatId, "Tosha lulka");
+  bot.sendMessage(chatId, resp);
 });
