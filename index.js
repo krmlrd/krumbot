@@ -14,7 +14,8 @@ const bc = [
   'у тебя рыльце-то в пушку!',
   'залупа петра великого!',
   'ух и дьявол)',
-  'Тоша, ты же лулка!'
+  'Тоша, ты же лулка!',
+  'как по пизде ладошкой! *имитирует удары по пизде ладошкой*'
 ];
 // replace the value below with the Telegram token you receive from @BotFather
 const token = '288763760:AAFOQ9Vk6GIOg2N3A7QSbmIhCJC3JnUQbcQ';
