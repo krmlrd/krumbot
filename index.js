@@ -61,10 +61,20 @@ bot.onText(/\/krumbot (.+)/, function (msg, match) {
   var resp = match[1];
   if (match[1] == 'pasta') {
     resp = tale[Math.floor(Math.random()*tale.length)];
-  } else if (empty(match[1])) {
-    var resp = bc[Math.floor(Math.random()*bc.length)];
   }
 
   // send a message to the chat acknowledging receipt of their message
+  bot.sendMessage(chatId, resp);
+});
+
+bot.onText(/\/krumbot/, function (msg) {
+  // 'msg' is the received Message from Telegram
+  // 'match' is the result of executing the regexp above on the text content
+  // of the message
+
+  var chatId = msg.chat.id;
+  var resp = bc[Math.floor(Math.random()*bc.length)];
+
+  // send back the matched "whatever" to the chat
   bot.sendMessage(chatId, resp);
 });
