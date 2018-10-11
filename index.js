@@ -56,14 +56,17 @@ bot.setWebHook(`https://pure-refuge-34008.herokuapp.com/bot${token}`);
 //   bot.sendMessage(chatId, resp);
 // });
 
-bot.onText(/\/krumbot(.+)/, function (msg, match) {
+bot.onText(/\/krumbot/, function (msg, match) {
   var chatId = msg.chat.id;
-  var resp = match[1];
-  if (match[1] == ' pasta') {
-    resp = tale[Math.floor(Math.random()*tale.length)];
-  } else if (match[1] == '') {
-    resp = bc[Math.floor(Math.random()*bc.length)];
-  }
+  var resp = bc[Math.floor(Math.random()*bc.length)];
+
+  // send a message to the chat acknowledging receipt of their message
+  bot.sendMessage(chatId, resp);
+});
+
+bot.onText(/\/pasta/, function (msg, match) {
+  var chatId = msg.chat.id;
+  var resp = tale[Math.floor(Math.random()*tale.length)];
 
   // send a message to the chat acknowledging receipt of their message
   bot.sendMessage(chatId, resp);
